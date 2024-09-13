@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">آموزش ویوهای اندروید</string>
+    <string name="editProfile">ویرایش پروفایل</string>
+    <string name="done">تایید</string>
+    <string name="viewWebsite">مشاهده وب سایت</string>
+    <string name="androidDevelopment">توسعه اپلیکیشن های اندرویدی</string>
+    <string name="uiDesign">ساخت رابط کاربری</string>
+    <string name="deepLearning">یادگیری عمیق</string>
+    <string name="skills">مهارت ها</string>
+    <string name="provinceCity">استان، شهر</string>
+    <string name="gilanRasht">گیلان، رشت</string>
+    <string name="tehran">تهران، تهران</string>
+    <string name="alborzKaraj">البرز، کرج</string>
+    <string name="saveInformation">ذخیره اطلاعات</string>
+</resources>

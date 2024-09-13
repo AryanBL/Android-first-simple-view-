@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Android Simple Views</string>
+    <string name="editProfile">Edit Profile</string>
+    <string name="done">Done</string>
+    <string name="viewWebsite">View Website</string>
+    <string name="androidDevelopment">Android Development</string>
+    <string name="uiDesign">Ui design</string>
+    <string name="deepLearning">Deep Learning</string>
+    <string name="skills">Skills</string>
+    <string name="provinceCity">Province, City</string>
+    <string name="gilanRasht">Gilan, Rasht</string>
+    <string name="tehran">Tehran, Tehran</string>
+    <string name="alborzKaraj">Alborz, Karaj</string>
+    <string name="saveInformation">Save Information</string>
+
+</resources>
