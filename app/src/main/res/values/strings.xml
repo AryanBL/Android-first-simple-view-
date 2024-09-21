@@ -12,5 +12,6 @@
     <string name="tehran">Tehran, Tehran</string>
     <string name="alborzKaraj">Alborz, Karaj</string>
     <string name="saveInformation">Save Information</string>
+    <string name="editProfileHint">Enter your full name</string>
 
 </resources>

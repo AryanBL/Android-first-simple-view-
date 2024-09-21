@@ -12,4 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+app/src/main/res/layout/frame_layout_test.xml
+app/src/main/res/layout/linear_layout_test.xml
+app/src/main/res/layout/relativ_layout_test.xml
 local.properties

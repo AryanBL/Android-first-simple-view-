@@ -13,4 +13,6 @@
     <string name="tehran">تهران، تهران</string>
     <string name="alborzKaraj">البرز، کرج</string>
     <string name="saveInformation">ذخیره اطلاعات</string>
+    <string name="editProfileHint">نام کامل خود را وارد کنید</string>
+
 </resources>
