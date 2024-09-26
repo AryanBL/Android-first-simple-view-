@@ -27,6 +27,7 @@ public class EditProfileActivity extends AppCompatActivity {
         });
         final EditText editText = findViewById(R.id.edit_text_profile);
         Button saveButton = findViewById(R.id.btn_save_edit_profile);
+        editText.setText(getIntent().getStringExtra("fullNameInitial"));
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

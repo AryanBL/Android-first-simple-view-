@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -93,7 +94,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
+                TextView mainFullName = findViewById(R.id.tv_main_fullname);
+                intent.putExtra("fullNameInitial",mainFullName.getText());
                 startActivityForResult(intent,100);
+            }
+        });
+
+        Button btnViewWebsite = findViewById(R.id.btn_view_website);
+        btnViewWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.zoomg.ir"));
+                startActivity(intent);
             }
         });
 
@@ -108,4 +120,9 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(fullName);
         }
     }
+
+
+
+
+
 }
