@@ -13,6 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -21,6 +26,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     final int ALBORZ_ID = R.id.radio_button_alborz;
+    private ActivityResultLauncher<Intent> editProfileLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +94,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        
+        editProfileLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == RESULT_OK && result.getData() != null){
+                            String fullName = result.getData().getStringExtra("fullName");
+                            TextView textView = findViewById(R.id.tv_main_fullname);
+                            textView.setText(fullName);
+                        }
+                    }
+                }
+        );
+        
         Button editProfileButton = findViewById(R.id.btn_editProfile);
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
                 TextView mainFullName = findViewById(R.id.tv_main_fullname);
                 intent.putExtra("fullNameInitial",mainFullName.getText());
-                startActivityForResult(intent,100);
+                editProfileLauncher.launch(intent);
             }
         });
 
@@ -109,17 +127,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnSaveInfo = findViewById(R.id.btn_main_save_info);
+        btnSaveInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Info saved", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100 && resultCode == RESULT_OK && data != null){
-            String fullName = data.getStringExtra("fullName");
-            TextView textView = findViewById(R.id.tv_main_fullname);
-            textView.setText(fullName);
-        }
-    }
+
 
 
 
